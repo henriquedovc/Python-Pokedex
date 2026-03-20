@@ -23,18 +23,18 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             
             {% for pokemon in pokemons %}
-            <div class="flex flex-col items-center bg-black rounded-lg p-6 shadow-xl border-4 border-blue-800 transition hover:-translate-y-2 m-4">
+            <div class="flex flex-col items-center bg-white rounded-lg p-6 shadow-xl border-4 border-red-800 transition hover:-translate-y-2 m-4">
                 
                 <span class="text-white text-[10px] mb-2">#{{ pokemon.numero }}</span>
 
-                <div class="bg-white rounded-full p-4 mb-4 border-4 border-blue-400">
+                <div class="bg-black rounded-full p-4 mb-4 border-4 border-red-400">
                     <img src="{{ pokemon.foto_url }}" alt="{{ pokemon.nome }}" class="w-24 h-24 object-contain">
                 </div>
 
-                <h2 class="text-white text-xs uppercase mb-4 text-center">{{ pokemon.nome }}</h2>
+                <h2 class="text-black text-xs uppercase mb-4 text-center">{{ pokemon.nome }}</h2>
                 
                 {% for t in pokemon.tipos.all %}
-                    <span class="text-[8px] px-3 py-1 rounded-full font-bold uppercase text-white shadow-md border border-black/20
+                    <span class="text-[8px] px-3 py-1 rounded-full font-bold uppercase text-black shadow-md border border-black/20
                         {% if t.nome == 'grass' %} bg-green-500
                         {% elif t.nome == 'fire' %} bg-red-500
                         {% elif t.nome == 'water' %} bg-blue-500
@@ -57,10 +57,12 @@
                     </span>
                     {% endfor %}
 
-                <h2 class="text-white text-xs uppercase mb-4 text-center p-3">{{ pokemon.descricao }}</h2>
+                <h2 class="text-black text-xs uppercase mb-4 text-center p-3">{{ pokemon.descricao }}</h2>
 
             </div>
             {% endfor %}
+        </div>
+    </div>
     
 </body>
 </html>
